@@ -29,7 +29,7 @@ class TimersDashboard extends React.Component {
   createTimer = (timer) => {
     const t = helpers.newTimer(timer);
     this.setState({
-      timers: this.state.timers.concat(t),
+      timers:  this.state.timers.concat(t),
     });
   };
 
@@ -150,11 +150,11 @@ class EditableTimer extends React.Component {
   };
 
   openForm = () => {
-    this.setState({ editFormOpen: true });
+    this.setState({ editFormOpen: true })
   };
 
   render() {
-    if (this.state.editFormOpen) {
+    if (this.props.editFormOpen) {
       return (
         <TimerForm
           id={this.props.id}
@@ -227,8 +227,8 @@ class TimerForm extends React.Component {
   };
 
   handleProjectChange = (e) => {
-    this.setState({ project: e.target.value });
-  };
+    this.setState({ project: e.target.value })
+  }
 
   handleSubmit = () => {
     this.props.onFormSubmit({
